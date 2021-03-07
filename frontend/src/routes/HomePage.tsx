@@ -4,6 +4,7 @@ import Carousel from 'react-material-ui-carousel';
 
 import BasePage from '../components/BasePage';
 import Showcase from '../components/Showcase';
+import { useTextStyles } from '../util/styles';
 
 import carouselImg from '../assets/carousel-1.png';
 import sunglasses from '../assets/sunglasses.png';
@@ -19,20 +20,12 @@ const useStyles = makeStyles((theme: Theme) =>
       textAlign: 'center',
       padding: theme.spacing(1),
     },
-    centered: {
-      textAlign: "center"
-    },
-    underlineWhite: {
-      borderBottom: "1px solid white"
-    },
-    underlineBlack: {
-      borderBottom: "1px solid black"
-    }
   })
 )
 
 function HomePage() {
   const classes = useStyles();
+  const textClasses = useTextStyles();
   return (
     <BasePage>
       <Typography variant="h2" className={classes.title}>Introducing this fall</Typography>
@@ -65,7 +58,7 @@ function HomePage() {
             </Grid>
             <Grid item xs>
               <Box pt={4} pb={4} width={400}>
-                <Typography variant="h3" className={classes.underlineBlack}>
+                <Typography variant="h3" className={textClasses.underlineBlack}>
                   Inspire
                 </Typography>
                 <Typography variant="h5">
@@ -90,16 +83,18 @@ function HomePage() {
       <Box bgcolor="secondary.main" color="text.primary">
         <Box display="flex" justifyContent="center">
           <Box maxWidth={500} pt={4}>
-            <Typography variant="h4" className={`${classes.underlineWhite} ${classes.centered}`}>
+            <Typography variant="h4" className={`${textClasses.underlineWhite} ${textClasses.centered}`}>
               Join the Community
             </Typography>
-            <Typography variant="h6" className={classes.centered}>
-              Create your own clothing designs and earn money by sharing it with the community!
-            </Typography>
+            <Box pt={4}>
+              <Typography variant="h6" className={textClasses.centered}>
+                Create your own clothing designs and earn money by sharing it with the community!
+              </Typography>
+            </Box>
           </Box>
           <Showcase
             avatar={linus}
-            clothing={hoodie} 
+            clothing={hoodie}
             username="whoisJoe321"
             body="Ay yoo guys check out my latest hoodie design!" />
         </Box>
