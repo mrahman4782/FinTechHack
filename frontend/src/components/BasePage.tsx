@@ -7,6 +7,12 @@ import MenuIcon from '@material-ui/icons/Menu';
 import { Link } from 'react-router-dom';
 
 const theme = createMuiTheme({
+  typography: {
+    fontFamily: 'Cambo',
+    h4: {
+      fontFamily: 'Julius Sans One',
+    }
+  },
   palette: {
     primary: {
       main: '#000000'
@@ -22,8 +28,7 @@ const useStyles = makeStyles((theme: Theme) =>
     grow: {
       flexGrow: 1,
     },
-    title: {
-      fontSize: "2em",
+    navLink: {
       color: "#ffffff",
       textDecoration: "none",
       padding: theme.spacing(1),
@@ -38,8 +43,8 @@ function BasePage(props: { children: JSX.Element }) {
       <AppBar position="static">
         <Toolbar>
           <Box className={classes.grow}>
-            <Link to="/" className={classes.title}>
-              Sample Title
+            <Link to="/" className={classes.navLink}>
+              <Typography variant="h4">Sample Title</Typography>
             </Link>
           </Box>
           <IconButton color="inherit">
@@ -59,14 +64,14 @@ function BasePage(props: { children: JSX.Element }) {
 
       <AppBar position="static" color="secondary">
         <Box bgcolor="secondary" display="flex" justifyContent="space-evenly">
-          <Link to="/releases" className={classes.title}>
-            New Releases
+          <Link to="/releases" className={classes.navLink}>
+            <Typography variant="h4">New Releases</Typography>
           </Link>
-          <Link to="/create" className={classes.title}>
-            Create
+          <Link to="/create" className={classes.navLink}>
+            <Typography variant="h4">Create</Typography>
           </Link>
-          <Link to="/community" className={classes.title}>
-            Community
+          <Link to="/community" className={classes.navLink}>
+            <Typography variant="h4">Community</Typography>
           </Link>
         </Box>
       </AppBar>
@@ -80,17 +85,17 @@ function BasePage(props: { children: JSX.Element }) {
         justifyContent="space-around"
         alignItems="center"
         bgcolor={theme.palette.primary.main}>
-        <Link to="#" className={classes.title}>
-          English (US)
+        <Link to="#" className={classes.navLink}>
+          <Typography variant="h4">English (US)</Typography>
         </Link>
-        <Link to="/about" className={classes.title}>
-          About Us
+        <Link to="/about" className={classes.navLink}>
+          <Typography variant="h4">About Us</Typography>
         </Link>
-        <Link to="#" className={classes.title}>
-          Cookies
+        <Link to="#" className={classes.navLink}>
+          <Typography variant="h4">Cookies</Typography>
         </Link>
-        <Link to="/legal" className={classes.title}>
-          Legal
+        <Link to="/legal" className={classes.navLink}>
+          <Typography variant="h4">Legal</Typography>
         </Link>
       </Box>
     </ThemeProvider>
