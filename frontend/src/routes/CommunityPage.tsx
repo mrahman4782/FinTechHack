@@ -1,14 +1,17 @@
 import React from 'react';
 import { Box, Typography } from '@material-ui/core';
+
 import BasePage from '../components/BasePage';
+import Showcase from '../components/Showcase';
+import { useTextStyles } from '../util/styles';
 
 import linus from '../assets/linus.jpeg';
 import hoodie from '../assets/hoodie.jpeg';
 import squidward from '../assets/squidward.png';
 import squidwardShirt from '../assets/squidward-shirt.jpeg';
-import Showcase from '../components/Showcase';
 
 function CommunityPage() {
+  const textClasses = useTextStyles();
   const posts = [
     {
       avatar: linus,
@@ -27,7 +30,7 @@ function CommunityPage() {
   return (
     <BasePage>
       <Box m={2} textAlign="center">
-        <Typography variant="h2">Community</Typography>
+        <Typography variant="h2" className={textClasses.heading}>Community</Typography>
       </Box>
       <Box display="flex" flexDirection="column" alignItems="center">
         {posts.map(post => <Showcase {...post} />)}
