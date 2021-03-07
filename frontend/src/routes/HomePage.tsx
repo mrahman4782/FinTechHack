@@ -1,10 +1,9 @@
 import React from 'react';
-import { Avatar, Box, Button, createStyles, Grid, IconButton, makeStyles, Theme, Typography } from '@material-ui/core';
-import BasePage from '../components/BasePage';
+import { Box, Button, createStyles, Grid, makeStyles, Theme, Typography } from '@material-ui/core';
 import Carousel from 'react-material-ui-carousel';
-import ThumbUpIcon from '@material-ui/icons/ThumbUpOutlined';
-import ThumbDownIcon from '@material-ui/icons/ThumbDownOutlined';
-import CommentIcon from '@material-ui/icons/CommentOutlined';
+
+import BasePage from '../components/BasePage';
+import Showcase from '../components/Showcase';
 
 import carouselImg from '../assets/carousel-1.png';
 import sunglasses from '../assets/sunglasses.png';
@@ -98,31 +97,11 @@ function HomePage() {
               Create your own clothing designs and earn money by sharing it with the community!
             </Typography>
           </Box>
-
-          <Box width={450} m={2} bgcolor="secondary.light" color="primary.main" textAlign="center">
-            <Box display="flex" m={2} p={1} className={classes.underlineBlack} textAlign="left">
-              <Box mr={2}>
-                <Avatar src={linus} />
-              </Box>
-              <Box>
-                <Typography>@username</Typography>
-                <Typography>Look at this cool hoodie design!</Typography>
-              </Box>
-            </Box>
-            <img src={hoodie} height={170} />
-            <Box>
-              <IconButton>
-                <ThumbUpIcon />
-              </IconButton>
-              <IconButton>
-                <CommentIcon />
-              </IconButton>
-              <IconButton>
-                <ThumbDownIcon />
-              </IconButton>
-            </Box>
-          </Box>
-
+          <Showcase
+            avatar={linus}
+            clothing={hoodie} 
+            username="whoisJoe321"
+            body="Ay yoo guys check out my latest hoodie design!" />
         </Box>
       </Box>
     </BasePage>
