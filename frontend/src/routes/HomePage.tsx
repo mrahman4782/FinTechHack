@@ -62,15 +62,17 @@ function HomePage() {
         <Grid container justify="space-evenly" alignItems="center">
           <Grid container>
             <Grid item xs>
-              <img src={sunglasses} height={150} />
+              <img src={sunglasses} width={400} />
             </Grid>
             <Grid item xs>
-              <Typography variant="h3" className={classes.underlineBlack}>
-                Inspire
-              </Typography>
-              <Typography variant="h5">
-                Buy our stuff
-              </Typography>
+              <Box pt={4} pb={4} width={400}>
+                <Typography variant="h3" className={classes.underlineBlack}>
+                  Inspire
+                </Typography>
+                <Typography variant="h5">
+                  Buy our stuff
+                </Typography>
+              </Box>
             </Grid>
           </Grid>
           <Grid container>
