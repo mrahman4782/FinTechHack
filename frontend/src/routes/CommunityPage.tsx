@@ -3,6 +3,7 @@ import { Box, Typography } from '@material-ui/core';
 
 import BasePage from '../components/BasePage';
 import Showcase from '../components/Showcase';
+import Heading from '../components/Heading';
 import { useTextStyles } from '../util/styles';
 
 import linus from '../assets/linus.jpeg';
@@ -29,9 +30,7 @@ function CommunityPage() {
   ];
   return (
     <BasePage>
-      <Box m={2} textAlign="center">
-        <Typography variant="h2" className={textClasses.heading}>Community</Typography>
-      </Box>
+      <Heading page="Community" />
       <Box display="flex" flexDirection="column" alignItems="center">
         {posts.map(post => <Showcase {...post} />)}
       </Box>
