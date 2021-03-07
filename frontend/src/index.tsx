@@ -1,17 +1,23 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+import { Redirect, Route, BrowserRouter, Switch } from 'react-router-dom';
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+import CommunityPage from './routes/CommunityPage';
+import CreatePage from './routes/CreatePage';
+import HomePage from './routes/HomePage';
+import NewReleasesPage from './routes/NewReleasesPage';
+
+const router = (
+  <BrowserRouter>
+    <Switch>
+      <Route exact path="/" component={HomePage} />
+      <Route exact path="/create" component={CreatePage} />
+      <Route exact path="/releases" component={NewReleasesPage} />
+      <Route exact path="/community" component={CommunityPage} />
+
+      <Route exact path="/*" render={() => <Redirect to="/" />} />
+    </Switch>
+  </BrowserRouter>
+)
+
+ReactDOM.render(router, document.getElementById('root'));
