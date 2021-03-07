@@ -1,4 +1,5 @@
 import ReactDOM from 'react-dom';
+import './index.css';
 
 import { Redirect, Route, BrowserRouter, Switch } from 'react-router-dom';
 
