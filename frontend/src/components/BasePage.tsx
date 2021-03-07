@@ -9,16 +9,29 @@ import { Link } from 'react-router-dom';
 const theme = createMuiTheme({
   typography: {
     fontFamily: 'Cambo',
-    h4: {
+    "h1": {
       fontFamily: 'Julius Sans One',
-    }
+    },
+    "h2": {
+      fontFamily: 'Julius Sans One',
+    },
+    "h3": {
+      fontFamily: 'Julius Sans One',
+    },
+    "h4": {
+      fontFamily: 'Julius Sans One',
+    },
   },
   palette: {
     primary: {
       main: '#000000'
     },
     secondary: {
-      main: '#3D3C3C'
+      main: '#3D3C3C',
+      light: '#D7DFE0',
+    },
+    text: {
+      primary: '#ffffff'
     }
   }
 });
@@ -29,14 +42,14 @@ const useStyles = makeStyles((theme: Theme) =>
       flexGrow: 1,
     },
     navLink: {
-      color: "#ffffff",
+      color: theme.palette.text.primary,
       textDecoration: "none",
       padding: theme.spacing(1),
     },
   })
 )
 
-function BasePage(props: { children: JSX.Element }) {
+function BasePage(props: { children: JSX.Element | JSX.Element[] }) {
   const classes = useStyles();
   return (
     <ThemeProvider theme={theme}>
@@ -44,7 +57,7 @@ function BasePage(props: { children: JSX.Element }) {
         <Toolbar>
           <Box className={classes.grow}>
             <Link to="/" className={classes.navLink}>
-              <Typography variant="h4">Sample Title</Typography>
+              <Typography variant="h4" color="textPrimary">Sample Title</Typography>
             </Link>
           </Box>
           <IconButton color="inherit">
@@ -65,13 +78,13 @@ function BasePage(props: { children: JSX.Element }) {
       <AppBar position="static" color="secondary">
         <Box bgcolor="secondary" display="flex" justifyContent="space-evenly">
           <Link to="/releases" className={classes.navLink}>
-            <Typography variant="h4">New Releases</Typography>
+            <Typography variant="h4" color="textPrimary">New Releases</Typography>
           </Link>
           <Link to="/create" className={classes.navLink}>
-            <Typography variant="h4">Create</Typography>
+            <Typography variant="h4" color="textPrimary">Create</Typography>
           </Link>
           <Link to="/community" className={classes.navLink}>
-            <Typography variant="h4">Community</Typography>
+            <Typography variant="h4" color="textPrimary">Community</Typography>
           </Link>
         </Box>
       </AppBar>
@@ -84,18 +97,18 @@ function BasePage(props: { children: JSX.Element }) {
         display="flex"
         justifyContent="space-around"
         alignItems="center"
-        bgcolor={theme.palette.primary.main}>
+        bgcolor="primary.main">
         <Link to="#" className={classes.navLink}>
-          <Typography variant="h4">English (US)</Typography>
+          <Typography variant="h4" color="textPrimary">English (US)</Typography>
         </Link>
         <Link to="/about" className={classes.navLink}>
-          <Typography variant="h4">About Us</Typography>
+          <Typography variant="h4" color="textPrimary">About Us</Typography>
         </Link>
         <Link to="#" className={classes.navLink}>
-          <Typography variant="h4">Cookies</Typography>
+          <Typography variant="h4" color="textPrimary">Cookies</Typography>
         </Link>
         <Link to="/legal" className={classes.navLink}>
-          <Typography variant="h4">Legal</Typography>
+          <Typography variant="h4" color="textPrimary">Legal</Typography>
         </Link>
       </Box>
     </ThemeProvider>
