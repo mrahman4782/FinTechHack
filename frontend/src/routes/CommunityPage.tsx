@@ -1,10 +1,9 @@
 import React from 'react';
-import { Box, Typography } from '@material-ui/core';
+import { Box } from '@material-ui/core';
 
 import BasePage from '../components/BasePage';
 import Showcase from '../components/Showcase';
 import Heading from '../components/Heading';
-import { useTextStyles } from '../util/styles';
 
 import linus from '../assets/linus.jpeg';
 import hoodie from '../assets/hoodie.jpeg';
@@ -12,7 +11,6 @@ import squidward from '../assets/squidward.png';
 import squidwardShirt from '../assets/squidward-shirt.jpeg';
 
 function CommunityPage() {
-  const textClasses = useTextStyles();
   const posts = [
     {
       avatar: linus,

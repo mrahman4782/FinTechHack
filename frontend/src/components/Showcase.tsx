@@ -30,7 +30,7 @@ function Showcase(props: {
           <Typography>{props.body}</Typography>
         </Box>
       </Box>
-      <img src={props.clothing} height={170} />
+      <img src={props.clothing} alt={`${props.username}'s design`} height={170} />
       <Box>
         <IconButton>
           <ThumbUpIcon />

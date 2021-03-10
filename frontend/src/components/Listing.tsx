@@ -30,7 +30,7 @@ function Listing(props: { images: string[], name: string, price: number }) {
               margin: 1,
             }
           }}>
-          {props.images.map(image =>
+          {props.images.map((image, i) =>
             <Box
               display="flex"
               justifyContent="center"
@@ -38,7 +38,7 @@ function Listing(props: { images: string[], name: string, price: number }) {
               width={220}
               height={330}
               overflow="hidden">
-              <img height="auto" src={image} />
+              <img height="auto" alt={`img ${i}`} src={image} />
             </Box>
           )}
         </Carousel>

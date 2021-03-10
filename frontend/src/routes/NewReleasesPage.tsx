@@ -2,7 +2,6 @@ import React from 'react';
 import { Box } from '@material-ui/core';
 
 import BasePage from '../components/BasePage';
-import { useTextStyles } from '../util/styles';
 import Heading from '../components/Heading';
 import Listing from '../components/Listing';
 
@@ -17,7 +16,6 @@ import release8 from '../assets/release8.jpeg';
 import release9 from '../assets/release9.jpeg';
 
 function NewReleasesPage() {
-  const textClasses = useTextStyles();
   const listings = [
     {
       images: [release1, release1, release1],

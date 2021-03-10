@@ -39,7 +39,7 @@ function HomePage() {
               alignItems="center"
               overflow="hidden"
               height={400}>
-              <img src={img} width="80%" />
+              <img src={img} alt="leather jacket" width="80%" />
               <Box position="absolute" bottom="40px">
                 <Button variant="contained" color="primary">
                   <Typography variant="h5">Shop Now</Typography>
@@ -54,7 +54,7 @@ function HomePage() {
         <Grid container justify="space-evenly" alignItems="center">
           <Grid container>
             <Grid item xs>
-              <img src={sunglasses} width={400} />
+              <img src={sunglasses} alt="sunglasses" width={400} />
             </Grid>
             <Grid item xs>
               <Box pt={4} pb={4} width={400}>
@@ -69,11 +69,11 @@ function HomePage() {
           </Grid>
           <Grid container>
             <Grid item xs>
-              <img src={drip1} height={280} />
+              <img src={drip1} alt="check that drip" height={280} />
             </Grid>
             <Grid item xs>
               <Box display="flex" justifyContent="center" width={400} overflow="hidden">
-                <img src={drip2} height={280} />
+                <img src={drip2} alt="check that drip2"height={280} />
               </Box>
             </Grid>
           </Grid>
