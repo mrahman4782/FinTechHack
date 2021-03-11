@@ -6,6 +6,8 @@ import SearchIcon from '@material-ui/icons/Search';
 import MenuIcon from '@material-ui/icons/Menu';
 import { Link } from 'react-router-dom';
 
+import logoWhite from '../assets/logo-white.png';
+
 const theme = createMuiTheme({
   typography: {
     fontFamily: 'Cambo',
@@ -57,7 +59,7 @@ function BasePage(props: { children: JSX.Element | JSX.Element[] }) {
         <Toolbar>
           <Box className={classes.grow}>
             <Link to="/" className={classes.navLink}>
-              <Typography variant="h4" color="textPrimary">Sample Title</Typography>
+              <img height={50} src={logoWhite} />
             </Link>
           </Box>
           <IconButton color="inherit">
