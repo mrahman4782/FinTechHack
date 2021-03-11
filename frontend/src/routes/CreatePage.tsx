@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Box, Tab, Tabs } from '@material-ui/core';
+import { Box, Button, Dialog, Tab, Tabs, Typography } from '@material-ui/core';
 import Designer, { Preview } from 'react-designer';
 
 import BasePage from '../components/BasePage';
 import Heading from '../components/Heading';
+import Exporter from '../components/Exporter';
 
 import shirtFront from '../assets/shirt-front.png';
 import shirtBack from '../assets/shirt-back.png';
@@ -31,18 +32,29 @@ function CreatePage() {
     width: width, height: height,
     xlinkHref: shirtFront
   };
+  const [backObjects, setBackObjects] = useState([]);
   const backSvg = {
     type: 'image',
     x: 0, y: 0,
     width: width, height: height,
     xlinkHref: shirtBack
   };
-  const [backObjects, setBackObjects] = useState([]);
   const [tab, setTab] = useState(0);
+  const [showModal, setShowModal] = useState(false);
   return (
     <BasePage>
       <Heading page="Create" />
-      <Box display="flex" justifyContent="center">
+      <Box display="flex" flexDirection="column" justifyContent="center" alignItems="center">
+
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() => setShowModal(true)}>
+          <Typography variant="h5">
+            Post
+          </Typography>
+        </Button>
+
         <Box m={4} width={2 * width} border="1px solid black">
           <Tabs
             value={tab}
@@ -77,6 +89,18 @@ function CreatePage() {
             </Box>
           </TabPanel>
         </Box>
+
+        <Dialog
+          open={showModal}
+          onClose={() => setShowModal(false)}>
+          <Exporter
+            width={width}
+            height={height}
+            frontObjects={frontObjects}
+            backObjects={backObjects}
+            setShow={setShowModal} />
+        </Dialog>
+
       </Box>
     </BasePage>
   );
