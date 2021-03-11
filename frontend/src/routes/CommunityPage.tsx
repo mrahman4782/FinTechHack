@@ -11,7 +11,7 @@ function CommunityPage() {
   useEffect(() => {
     db.collection('shirtDesigns').get()
       .then(data => setPosts(data.docs.map(d => d.data())));
-  })
+  }, [])
   return (
     <BasePage>
       <Heading page="Community" />
